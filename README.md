@@ -1,4 +1,7 @@
 # KL/SELANGOR RENTAL PREDICTION USING LOGISTIC REGRESSION AND TREES MODELS
+**Purpose**
+
+This project is for study only. Caution must be taken as the information/technique used in this project may not be accurate or done in the right way. Also, credits to all the people for the sources used in this project. 
 
 **Problem statement**
 
@@ -15,6 +18,32 @@ In this project, I will use a high-rise housing dataset obtained from Kaggel. (h
 Commonly used models for predicting housing rental include Logistic Regression, Decision Trees, Random Forests, and Gradient Boosting algorithms. The evaluation of all models will be using the Confusion Matrix, Classification Report, F1 score, Matthews Correlation Coefficient, and ROC AUC.
 The models will be trained in 3 ways, by default, with parameter and with GridSearchCV. The models with highest score will be selacted as the best model for prediction.
 
-**Purpose**
+**Findings**
 
-This project is for study only. Caution must be taken as the information/technique used in this project may not be accurate or done in the right way. Also, credits to all the people for the sources used in this project. 
+1. Dataset Overview and Imbalance
+The target variable, rent_category, is highly imbalanced with the distribution:
+Low: 12,999, Medium: 6,902, High: 90
+This severe imbalance poses a significant challenge for model training and evaluation.
+
+2. Model Performance
+Multiple models were trained including Logistic Regression, Decision Tree, Random Forest, and Gradient Boosting.
+Performance metrics such as F1 score, Matthews Correlation Coefficient, and ROC AUC were evaluated for each model.
+Gradient Boosting with parameter is selected as the best model for now.
+
+3. Effect of Data Imbalance
+The imbalance in the dataset heavily influences the model performance, leading to potential biases toward the majority class (Low rent category).
+Metrics like ROC AUC and Matthews Correlation Coefficient indicate that while some models perform well, the imbalance needs to be addressed to improve predictions for minority classes.
+
+**Risk/Assumption/Limitation**
+
+Model Bias: Machine learning models can be biased towards the majority class during training. In this case, a model trained on this data might perform well for "low" rentals but perform poorly for "medium" and "high" rentals due to a lack of sufficient data for these categories. This can lead to inaccurate predictions and unreliable risk assessments for these rental categories.
+
+Class Imbalance: The extreme imbalance between "low" and other categories suggests potential class imbalance issues. Techniques like oversampling, undersampling, or cost-sensitive learning might be necessary to address this imbalance and improve model performance for minority classes in the future.
+
+Rental Market Representation: The data is assumed to be representative of the actual rental market distribution. If the data comes from a specific source or region with a unique rental landscape, it might not generalize well to other markets.
+Limited Generalizability: The model might not perform well on unseen data with a different rental category distribution. For example, if the model is deployed in a market with a higher proportion of "medium" or "high" rentals, its predictions might be unreliable.
+
+Data Quality: Data quality can affect the model's performance. Errors, missing info, or inconsistencies in the data can lead to unreliable model predictions.
+
+Data Understanding: Building a good model requires a deep understanding of the data and its industry. Failing to grasp the data and its context can lead to flawed models. Data analysis is essential for translating raw data into insights that guide effective model building.
+
