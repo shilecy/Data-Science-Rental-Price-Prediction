@@ -16,7 +16,7 @@ In this project, I will use a high-rise housing dataset obtained from Kaggel. (h
 **Algorithms and Metrics**
 
 Commonly used models for predicting housing rental include Logistic Regression, Decision Trees, Random Forests, and Gradient Boosting algorithms. The evaluation of all models will be using the Confusion Matrix, Classification Report, F1 score, Matthews Correlation Coefficient, and ROC AUC.
-The models will be trained in 3 ways, by default, with parameter and with GridSearchCV. The models with highest score will be selacted as the best model for prediction.
+The models will be trained in 3 ways, by default, with parameter and with GridSearchCV. The model with the highest score will be selected as the best model for prediction.
 
 **Findings**
 
